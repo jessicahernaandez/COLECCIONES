@@ -1,5 +1,5 @@
 /**/
-package Act_Resuelta_12_1;
+package Act_ResyProp_12_1;
 
 import java.util.Arrays;
 
