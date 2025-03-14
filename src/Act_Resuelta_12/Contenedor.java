@@ -1,10 +1,10 @@
-/**/
-package Act_Resuelta_12_2;
+/*Copia de la clase Contenedor*/
+package Act_Resuelta_12;
 
 import java.util.Arrays;
 
 
-public class Contenedor <T extends Comparable<T>> {
+public class Contenedor <T extends Comparable<T>> implements Pila<T> {
     
     //Datos de la clase
     T [] objetos; //Guarda los objetos
@@ -37,9 +37,9 @@ public class Contenedor <T extends Comparable<T>> {
         
         if (objetos.length > 0) {
             objetoDevolver = objetos[0];
-            //Dezplazamos dejando el ultimo espacio vacio
+            //Desplazamos dejando el ultimo espacio vacio
             System.arraycopy(objetos, 1, objetos, 0, objetos.length - 1);
-            //Trubcamos la tabla
+            //Truncamos la tabla
             objetos = Arrays.copyOf(objetos, objetos.length - 1);
         }
         
@@ -60,7 +60,7 @@ public class Contenedor <T extends Comparable<T>> {
     
     /*Ordena la tabla*/
     void ordenar () {
-        Arrays.sort(objetos); //?
+        Arrays.sort(objetos); 
     }
     
     /*Método toString*/
@@ -68,4 +68,14 @@ public class Contenedor <T extends Comparable<T>> {
     public String toString () {
         return Arrays.deepToString(objetos);
     }   
+
+    @Override
+    public void apilar(T elemento) {
+        insertarAlFinal(elemento);
+    }
+
+    @Override
+    public T desapilar() {
+        return extraerDelFinal();
+    }
 }
