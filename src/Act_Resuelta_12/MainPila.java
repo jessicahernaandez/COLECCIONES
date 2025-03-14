@@ -16,18 +16,20 @@ public class MainPila {
         System.out.println("¡PILAS!");
 
         while (numeroUsuario != -1) {
-            if (numeroUsuario >= 0) {
-                System.out.println("Introduce un número: ");
+            System.out.println("Introduce un número: ");
                 numeroUsuario = sc.nextInt();
+            if (numeroUsuario >= 0) {
                 numeros.apilar(numeroUsuario);
+            } else {
+                System.out.println("Debes introducir numeros positivos");
             }
         }
         
         System.out.println("Haz introducido el '-1'");
         System.out.println("Desapilando...");
         
-        
-        int elementos = numeros.objetos.length;
+        //Guardamos el numero de elementos que tiene la pila
+        int elementos = numeros.contadorObjetos;
         
         for(int i = 0; i < elementos; i++) {
             System.out.println(numeros.desapilar());

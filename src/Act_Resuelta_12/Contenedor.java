@@ -8,10 +8,12 @@ public class Contenedor <T extends Comparable<T>> implements Pila<T> {
     
     //Datos de la clase
     T [] objetos; //Guarda los objetos
+    int contadorObjetos;
     
     /*Constructor de la clase*/
     public Contenedor (T[] objetosNuevo) {
         objetos = objetosNuevo; //No se puede instanciar una tabla de tipo generico.
+        contadorObjetos = 0;
     }
     
     /*Inserta un objeto al principio de la tabla*/
@@ -21,6 +23,7 @@ public class Contenedor <T extends Comparable<T>> implements Pila<T> {
         //desplazamos
         System.arraycopy(objetos, 0, objetos, 1, objetos.length -1);
         objetos[0] = nuevo;
+        contadorObjetos++;
     }
     
     /*Inserta un objeto al final de la tabla*/
@@ -28,7 +31,7 @@ public class Contenedor <T extends Comparable<T>> implements Pila<T> {
         objetos = Arrays.copyOf(objetos, objetos.length + 1);
         
         objetos[objetos.length - 1] = nuevo;
-        
+        contadorObjetos++;
     }
     
     /*Devuelve el objeto que esta en la posicion 0*/
@@ -41,6 +44,7 @@ public class Contenedor <T extends Comparable<T>> implements Pila<T> {
             System.arraycopy(objetos, 1, objetos, 0, objetos.length - 1);
             //Truncamos la tabla
             objetos = Arrays.copyOf(objetos, objetos.length - 1);
+            contadorObjetos--;
         }
         
         return objetoDevolver;
@@ -53,6 +57,7 @@ public class Contenedor <T extends Comparable<T>> implements Pila<T> {
             objetoDevolver = objetos[objetos.length -1];
             //Truncamos el final
             objetos = Arrays.copyOf(objetos, objetos.length - 1);
+            contadorObjetos--;
         }
         
         return objetoDevolver;
