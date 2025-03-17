@@ -26,7 +26,10 @@ public class MainPila {
         System.out.println("Haz introducido el '-1'");
         System.out.println("Desapilando...");
         
-        for(int i = 0; i < numeros.objetos.length; i++) {
+        
+        int elementos = numeros.objetos.length;
+        
+        for(int i = 0; i < elementos; i++) {
             System.out.println(numeros.desapilar());
         }
     }
