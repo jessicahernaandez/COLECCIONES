@@ -34,7 +34,7 @@ public class Main {
         System.out.println(superCola);
         System.out.println();
 
-        // Vaciar Cola 1 y probar si se desencola.
+        //Vaciar Cola 1 y probar si se desencola.
         System.out.println("Vaciando Cola...");
         superCola.desencolarUNO(); //Quita el último elemento de fallback:");Cola 1
         System.out.println("Intentando desencolar de Cola 1 vacía:");

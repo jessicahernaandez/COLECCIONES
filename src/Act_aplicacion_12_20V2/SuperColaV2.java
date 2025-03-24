@@ -24,7 +24,7 @@ public class SuperColaV2 <T> {
     -> Saca elementos al principio de la lista*/
     public T desencolarUNO() {
         T elementoDevolver = null;
-        
+
         elementoDevolver = colaUno.desencolar();
         if (elementoDevolver == null) {
             System.out.println("No hay elementos a desencolar en Cola1 \n Desencolando cola Dos...");
