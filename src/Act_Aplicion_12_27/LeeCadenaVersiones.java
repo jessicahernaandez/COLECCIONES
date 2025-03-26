@@ -16,7 +16,7 @@ public class LeeCadenaVersiones {
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Introduce una cadena: ");
-        String cadena = sc.nextLine();
+        String cadena = sc.nextLine().trim();
         
         //Convertir la cadena en una lista de caracteres
         for (int i = 0; i < cadena.length(); i++) {
@@ -30,10 +30,10 @@ public class LeeCadenaVersiones {
     -> El mismo protitpo a diferencia que esta recibe una cadena como parametro*/
     public static List<Character> leeCadena(String cadena) {
         List<Character> listaCaracteres = new ArrayList<>();
-        
+              
         //Convertir la cadena en una lista de caracteres
         for (int i = 0; i < cadena.length(); i++) {
-            listaCaracteres.add(cadena.charAt(i));
+            listaCaracteres.add(cadena.trim().charAt(i));
         }
         
         return listaCaracteres;
@@ -50,9 +50,9 @@ public class LeeCadenaVersiones {
         //Prueba del segundo método (recibiendo un String como parámetro) -> Segunda version del metodo
         System.out.println("Prueba de leeCadena() con parámetro:");
         String cadenaMetodoDos = "Lunita es traviesa";
-        List<Character> lista2 = leeCadena(cadenaMetodoDos);
+        List<Character> listaMetodoDos = leeCadena(cadenaMetodoDos);
         System.out.println("Cadena de entrada: " + cadenaMetodoDos);
-        System.out.println("Resultado: " + lista2);
+        System.out.println("Resultado: " + listaMetodoDos);
     }
 }
     
